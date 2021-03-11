@@ -28,14 +28,14 @@ function musicBox () {
 input.onButtonPressed(Button.A, function () {
 	
 })
-input.onSound(DetectedSound.Loud, function () {
-	
-})
 input.onButtonPressed(Button.AB, function () {
-	
+    music.stopMelody(MelodyStopOptions.All)
 })
 input.onButtonPressed(Button.B, function () {
 	
+})
+input.onGesture(Gesture.Shake, function () {
+    music.changeTempoBy(20)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     musicBox()
