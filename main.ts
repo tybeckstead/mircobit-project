@@ -37,6 +37,7 @@ function tempFunct () {
         if (input.temperature() <= 21) {
             basic.showString("" + (input.temperature()))
             basic.showString("*C")
+            music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
             basic.showLeds(`
                 . . . . .
                 . # . # .
@@ -48,6 +49,7 @@ function tempFunct () {
         } else {
             basic.showString("" + (input.temperature()))
             basic.showString("*C")
+            music.startMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once)
             basic.showIcon(IconNames.Happy)
             basic.pause(2000)
         }
