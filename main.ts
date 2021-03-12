@@ -5,8 +5,8 @@ input.onButtonPressed(Button.A, function () {
 function makeCompass () {
     music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
     for (let index = 0; index < 2; index++) {
-        basic.showString("Direction is")
         basic.showString("" + (input.compassHeading()))
+        basic.showString("Degree")
     }
 }
 function makeCommand () {
@@ -35,7 +35,7 @@ function tempFunct () {
     music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
     if (input.temperature() <= 21) {
         basic.showString("" + (input.temperature()))
-        basic.showString("Degrees *C")
+        basic.showString("*C")
         basic.showLeds(`
             . . . . .
             . # . # .
@@ -46,7 +46,7 @@ function tempFunct () {
         basic.pause(2000)
     } else {
         basic.showString("" + (input.temperature()))
-        basic.showString("Degree *C")
+        basic.showString("*C")
         basic.showIcon(IconNames.Happy)
         basic.pause(2000)
     }
