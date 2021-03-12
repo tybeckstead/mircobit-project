@@ -1,6 +1,6 @@
 input.onButtonPressed(Button.A, function () {
+    basic.pause(500)
     tempFunct()
-    music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
 })
 function makeCommand () {
     basic.showLeds(`
@@ -13,10 +13,10 @@ function makeCommand () {
     basic.showString("Press Temp!")
 }
 function tempFunct () {
-    basic.pause(500)
+    music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
     if (input.temperature() <= 21) {
         basic.showString("" + (input.temperature()))
-        basic.showString("It's Cold")
+        basic.showString("Degree *C")
         basic.showLeds(`
             . . . . .
             . # . # .
@@ -24,12 +24,12 @@ function tempFunct () {
             . # # # .
             # . . . #
             `)
-        basic.pause(1000)
+        basic.pause(2000)
     } else {
         basic.showString("" + (input.temperature()))
-        basic.showString("It's Warm")
+        basic.showString("Degree *C")
         basic.showIcon(IconNames.Happy)
-        basic.pause(1000)
+        basic.pause(2000)
     }
 }
 function turnOnMelody () {
