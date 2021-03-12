@@ -4,8 +4,10 @@ input.onButtonPressed(Button.A, function () {
 })
 function makeCompass () {
     music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
-    basic.showString("" + (input.compassHeading()))
-    basic.showString("Hello!")
+    for (let index = 0; index < 2; index++) {
+        basic.showString("Direction is")
+        basic.showString("" + (input.compassHeading()))
+    }
 }
 function makeCommand () {
     basic.showLeds(`
