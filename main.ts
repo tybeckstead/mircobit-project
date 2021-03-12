@@ -4,7 +4,7 @@ function turnOnMelody () {
 }
 turnOnMelody()
 basic.forever(function () {
-    if (21 < input.temperature()) {
+    if (input.temperature() <= 22) {
         basic.showString("" + (input.temperature()))
         basic.showString("It's Cold")
     } else {
