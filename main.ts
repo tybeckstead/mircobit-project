@@ -33,22 +33,24 @@ input.onButtonPressed(Button.B, function () {
 })
 function tempFunct () {
     music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
-    if (input.temperature() <= 21) {
-        basic.showString("" + (input.temperature()))
-        basic.showString("*C")
-        basic.showLeds(`
-            . . . . .
-            . # . # .
-            . . . . .
-            . # # # .
-            # . . . #
-            `)
-        basic.pause(2000)
-    } else {
-        basic.showString("" + (input.temperature()))
-        basic.showString("*C")
-        basic.showIcon(IconNames.Happy)
-        basic.pause(2000)
+    for (let index = 0; index < 2; index++) {
+        if (input.temperature() <= 21) {
+            basic.showString("" + (input.temperature()))
+            basic.showString("*C")
+            basic.showLeds(`
+                . . . . .
+                . # . # .
+                . . . . .
+                . # # # .
+                # . . . #
+                `)
+            basic.pause(2000)
+        } else {
+            basic.showString("" + (input.temperature()))
+            basic.showString("*C")
+            basic.showIcon(IconNames.Happy)
+            basic.pause(2000)
+        }
     }
 }
 function turnOnMelody () {
