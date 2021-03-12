@@ -4,6 +4,8 @@ input.onButtonPressed(Button.A, function () {
 })
 function makeCompass () {
     music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
+    basic.showString("" + (input.compassHeading()))
+    basic.showString("Hello!")
 }
 function makeCommand () {
     basic.showLeds(`
@@ -24,7 +26,6 @@ function makeCommand () {
     basic.showString("Press for Compass!")
 }
 input.onButtonPressed(Button.B, function () {
-    basic.showString("" + (input.compassHeading()))
     basic.pause(500)
     makeCompass()
 })
@@ -54,11 +55,5 @@ function turnOnMelody () {
 }
 turnOnMelody()
 basic.forever(function () {
-    if (input.buttonIsPressed(Button.B)) {
-        makeCompass()
-    } else if (input.buttonIsPressed(Button.A)) {
-        tempFunct()
-    } else {
-        makeCommand()
-    }
+    makeCommand()
 })
