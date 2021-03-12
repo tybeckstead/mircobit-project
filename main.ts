@@ -13,8 +13,11 @@ function makeCommand () {
 }
 function tempFunct () {
     if (input.temperature() <= 21) {
+        music.playTone(196, music.beat(BeatFraction.Whole))
         basic.showString("" + (input.temperature()))
         basic.showString("It's Cold")
+        basic.pause(1000)
+        music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
         basic.showLeds(`
             . . . . .
             . # . # .
@@ -22,12 +25,13 @@ function tempFunct () {
             . # # # .
             # . . . #
             `)
-        basic.pause(1000)
     } else {
+        music.playTone(392, music.beat(BeatFraction.Whole))
         basic.showString("" + (input.temperature()))
         basic.showString("It's Warm")
-        basic.showIcon(IconNames.Happy)
         basic.pause(1000)
+        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
+        basic.showIcon(IconNames.Happy)
     }
 }
 function turnOnMelody () {
