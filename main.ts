@@ -3,7 +3,7 @@ input.onButtonPressed(Button.A, function () {
     tempFunct()
 })
 function makeCompass () {
-    music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
+    music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
 }
 function makeCommand () {
     basic.showLeds(`
@@ -13,14 +13,23 @@ function makeCommand () {
         . # # . .
         . . # . .
         `)
-    basic.showString("Press to view temp!")
+    basic.showString("Press for Temp!")
+    basic.showLeds(`
+        . . # . .
+        . . # # .
+        . . # # #
+        . . # # .
+        . . # . .
+        `)
+    basic.showString("Press for Compass!")
 }
 input.onButtonPressed(Button.B, function () {
+    basic.showString("" + (input.compassHeading()))
     basic.pause(500)
     makeCompass()
 })
 function tempFunct () {
-    music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
+    music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
     if (input.temperature() <= 21) {
         basic.showString("" + (input.temperature()))
         basic.showString("Degrees *C")
@@ -43,17 +52,14 @@ function turnOnMelody () {
     music.playMelody("E A C5 A B G A F ", 150)
     basic.showString("Welcome!")
 }
-function makeCommand2 () {
-    basic.showLeds(`
-        . . # . .
-        . . # # .
-        . . # # #
-        . . # # .
-        . . # . .
-        `)
-    basic.showString("Press to view Compass!")
-}
 turnOnMelody()
 basic.forever(function () {
     makeCommand()
+    if (input.buttonIsPressed(Button.B)) {
+        makeCompass()
+    } else if (input.buttonIsPressed(Button.A)) {
+        tempFunct()
+    } else {
+        makeCommand()
+    }
 })
