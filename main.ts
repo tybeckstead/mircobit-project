@@ -10,7 +10,7 @@ function makeCommand () {
         . # # . .
         . . # . .
         `)
-    basic.showString("Press Temp!")
+    basic.showString("Press to view temp!")
 }
 function tempFunct () {
     music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
@@ -35,6 +35,16 @@ function tempFunct () {
 function turnOnMelody () {
     music.playMelody("E A C5 A B G A F ", 150)
     basic.showString("Welcome!")
+}
+function makeCommand2 () {
+    basic.showLeds(`
+        . . # . .
+        . # # . .
+        # # # . .
+        . # # . .
+        . . # . .
+        `)
+    basic.showString("Press to view temp!")
 }
 turnOnMelody()
 basic.forever(function () {
