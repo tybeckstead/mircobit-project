@@ -54,7 +54,6 @@ function turnOnMelody () {
 }
 turnOnMelody()
 basic.forever(function () {
-    makeCommand()
     if (input.buttonIsPressed(Button.B)) {
         makeCompass()
     } else if (input.buttonIsPressed(Button.A)) {
