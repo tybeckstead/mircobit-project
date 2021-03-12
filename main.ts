@@ -12,6 +12,9 @@ function makeCommand () {
         `)
     basic.showString("Press to view temp!")
 }
+input.onButtonPressed(Button.B, function () {
+	
+})
 function tempFunct () {
     music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
     if (input.temperature() <= 21) {
@@ -39,12 +42,12 @@ function turnOnMelody () {
 function makeCommand2 () {
     basic.showLeds(`
         . . # . .
-        . # # . .
-        # # # . .
-        . # # . .
+        . . # # .
+        . . # # #
+        . . # # .
         . . # . .
         `)
-    basic.showString("Press to view temp!")
+    basic.showString("Press to view Compass!")
 }
 turnOnMelody()
 basic.forever(function () {
