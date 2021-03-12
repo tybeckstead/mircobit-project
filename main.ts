@@ -1,5 +1,5 @@
 function tempFunct () {
-    if (input.temperature() <= 22) {
+    if (input.temperature() <= 21) {
         basic.showString("" + (input.temperature()))
         basic.showString("It's Cold")
     } else {
@@ -8,10 +8,12 @@ function tempFunct () {
     }
 }
 function turnOnMelody () {
-    music.playMelody("E B C5 A B G A F ", 150)
+    music.playMelody("E A C5 A B G A F ", 150)
     basic.showString("Welcome!")
 }
 turnOnMelody()
+tempFunct()
 basic.forever(function () {
-    tempFunct()
+    basic.showString("" + (input.temperature()))
+    basic.showString("'C")
 })
