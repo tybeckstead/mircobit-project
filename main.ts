@@ -6,7 +6,7 @@ function makeCompass () {
     music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
     for (let index = 0; index < 2; index++) {
         basic.showString("" + (input.compassHeading()))
-        basic.showString("Degree")
+        basic.showString("Degrees")
     }
 }
 function makeCommand () {
